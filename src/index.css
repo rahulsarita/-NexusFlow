@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base dark background */
+:root {
+  --bg-primary: #0f1117;
+  --bg-secondary: #161b27;
+  --bg-card: #1a2035;
+  --border-color: #2a3550;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1a2035;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a3550;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0ea5e9;
+}
+
+/* React Flow edge glow */
+.react-flow__edge-path {
+  filter: drop-shadow(0 0 4px rgba(14, 165, 233, 0.6));
+}
+
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+  filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.9));
+}
+
+/* React Flow dark background override */
+.react-flow__background {
+  background-color: #0f1117 !important;
+}
+
+.react-flow__minimap {
+  background-color: #161b27 !important;
+  border: 1px solid #2a3550 !important;
+  border-radius: 8px !important;
+}
+
+.react-flow__minimap-node {
+  fill: #2a3550;
+}
+
+.react-flow__controls {
+  background: #161b27 !important;
+  border: 1px solid #2a3550 !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background: #161b27 !important;
+  border-bottom: 1px solid #2a3550 !important;
+  color: #94a3b8 !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #2a3550 !important;
+  color: #0ea5e9 !important;
+}
+
+.react-flow__controls-button svg {
+  fill: currentColor !important;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(26, 32, 53, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(42, 53, 80, 0.8);
+  border-radius: 12px;
+}
+
+/* Animated gradient border */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #0ea5e9, #8b5cf6, #10b981);
+  z-index: -1;
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.25);
+}
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
+}
+.glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
+}
+.glow-red {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.25);
+}
+
+/* Alert slide-in animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.35s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Node styles */
+.nexus-node {
+  min-width: 200px;
+  border-radius: 10px;
+  overflow: visible;
+}
+
+/* React Flow handle overrides */
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid #2a3550 !important;
+  background: #0ea5e9 !important;
+  transition: all 0.2s;
+}
+.react-flow__handle:hover {
+  transform: scale(1.4);
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.8);
+}
+
+.react-flow__handle-left {
+  left: -5px !important;
+}
+.react-flow__handle-right {
+  right: -5px !important;
+}
+
+/* Recharts tooltip */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #1a2035 !important;
+  border: 1px solid #2a3550 !important;
+  border-radius: 8px !important;
+  color: #e2e8f0 !important;
+}
