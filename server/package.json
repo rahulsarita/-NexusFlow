@@ -1,0 +1,25 @@
+{
+  "name": "nexusflow-server",
+  "version": "1.0.0",
+  "description": "NexusFlow IoT Telemetry & Rule Engine — Backend Server",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "rxjs": "^7.8.1",
+    "ws": "^8.14.2",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "winston": "^3.11.0",
+    "uuid": "^9.0.0",
+    "axios": "^1.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
